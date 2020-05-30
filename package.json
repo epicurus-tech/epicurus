@@ -20,7 +20,7 @@
     "sinon-chai": "3.3.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "NODE_ENV=${NODE_ENV:=test} mocha './example/components/**/*.unit.test.js'"
   },
   "mocha": {
     "timeout": 50000,
@@ -29,6 +29,9 @@
     "require": [
       "./config/mocha-bootstrap.js",
       "./config/mocha.env.js"
+    ],
+    "spec": [
+      "./example/components/domain/*.unit.test.js"
     ],
     "exclude": [
       "node_modules"
