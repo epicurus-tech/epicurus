@@ -1,0 +1,49 @@
+{
+  "name": "epicurus",
+  "version": "0.0.1",
+  "description": "Generate stryker mutation tests configuration based on diff commits",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@stryker-mutator/core": "^3.2.4",
+    "mocha": "^7.2.0",
+    "chai": "4.2.0",
+    "chai-as-promised": "7.1.1",
+    "chai-subset": "1.6.0",
+    "sinon": "6.3.3",
+    "sinon-chai": "3.3.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "mocha": {
+    "timeout": 50000,
+    "reporter": "min",
+    "exit": true,
+    "require": [
+      "./config/mocha-bootstrap.js",
+      "./config/mocha.env.js"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtlimo/epicurus.git"
+  },
+  "keywords": [
+    "mutation-tests",
+    "git",
+    "diff-based"
+  ],
+  "author": "Jessica de Lima Fileto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jtlimo/epicurus/issues"
+  },
+  "homepage": "https://github.com/jtlimo/epicurus#readme"
+}
