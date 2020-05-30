@@ -9,10 +9,13 @@
   "dependencies": {},
   "devDependencies": {
     "@stryker-mutator/core": "^3.2.4",
-    "mocha": "^7.2.0",
+    "@stryker-mutator/javascript-mutator": "^3.2.4",
+    "@stryker-mutator/mocha-framework": "^3.2.4",
+    "@stryker-mutator/mocha-runner": "^3.2.4",
     "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
     "chai-subset": "1.6.0",
+    "mocha": "^7.2.0",
     "sinon": "6.3.3",
     "sinon-chai": "3.3.0"
   },
