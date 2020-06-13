@@ -1,0 +1,15 @@
+{
+   "include": ["src/**/*", "node_modules/@types"],
+   "module": "ES2020",
+   "target": "ES2020",
+   "strict": true,
+   "noImplicitAny": true,
+   "noImplicitThis": true,
+   "strictNullChecks": true,
+   "allowSyntheticDefaultImports": true,
+   "noImplicitReturns": true,
+   "noUnusedLocals": true,
+   "noUnusedParameters": true,
+   "forceConsistentCasingInFileNames": true,
+   "esModuleInterop": true
+}

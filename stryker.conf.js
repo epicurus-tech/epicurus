@@ -1,10 +1,14 @@
 module.exports = {
-  mutate: ['./example/components/domain/domain.js'],
-  mutator: "javascript",
+  mutate: ['./example/components/domain/domain.ts'],
+  mutator: "typescript",
   packageManager: "npm",
   reporters: ["html", "clear-text", "progress", "dashboard"],
-  testRunner: "mocha",
-  transpilers: [],
-  testFramework: "mocha",
-  coverageAnalysis: "perTest",
+  testRunner: "jest",
+  transpilers: ['typescript'],
+  testFramework: "jest",
+  coverageAnalysis: "off",
+  tsconfigFile: "tsconfig.json",
+  jest: {
+    enableFindRelatedTests: true,
+  }
 };
