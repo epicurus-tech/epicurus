@@ -4,7 +4,7 @@ import * as fs from 'fs';
 
 export class FileParser {
     private readonly dirDepth: string;
-    constructor(dirDepth = '../') {
+    constructor(dirDepth = '../../') {
       this.dirDepth = dirDepth;
     }
 
