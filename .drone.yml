@@ -1,0 +1,10 @@
+kind: pipeline
+name: epicurus
+
+type: docker
+steps:
+  - name: test
+    image: node:14.4.0-alpine
+    commands:
+      - npm install
+      - npm test
