@@ -1,15 +1,15 @@
 # Epicurus
----
+
 Epicurus is a tool that allows to generate stryker mutation test configuration based on diff commits.
 
 ## Prerequisites
----
+
 Before you begin, ensure you have met the following requirements:
 
 - You have installed node 14.4.0
 
 ## Installing epicurus
----
+
 To install epicurus, follow these steps:
 
 Linux and macOS:
@@ -23,7 +23,7 @@ npm install -D epicurus
 ---- under construction ----
 
 ## Contributing to epicurus
----
+
 
 To contribute to epicurus, follow these steps:
 
@@ -39,7 +39,7 @@ You can use github cli to quickly create a pull request.
 See how to installs [github cli](https://github.com/cli/cli).
 
 ## Contributors
----
+
 Thanks to the following people who have contributed to this project:
 
 - @jtlimo 📖🐛👩🏻‍💻
@@ -47,5 +47,5 @@ Thanks to the following people who have contributed to this project:
 This project follows the [all-contributors](https://allcontributors.org/) specification. Contributions of any kind are welcome!
 
 ## License
----
+
 This project uses the following license: [MIT](https://github.com/jtlimo/epicurus/blob/master/LICENSE).
