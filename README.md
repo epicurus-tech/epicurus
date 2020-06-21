@@ -31,14 +31,9 @@ npm install -D epicurus
 ## Contributing to epicurus
 
 
-To contribute to epicurus, follow these steps:
+To contribute to epicurus, follow the [contributing steps]:
 
-1. Fork this repository
-2. Create a branch: `git checkout -b development`
-3. Make your changes and commit them: `git commit -m "<commit_message>"`
-4. Push to the original branch: `git push origin epicurus/development`
-5. Create the pull request
-
+[contributing steps]: https://github.com/jtlimo/epicurus/blob/master/CONTRIBUTING.md
 Alternatively see the Github documentation on [creating a pull request](https://www.notion.so/Getting-Started-00191f447d7f4e1fb0b29dd7022a0936#e4ab5acc6fde4916850215c3985792b9)
 
 You can use github cli to quickly create a pull request.
