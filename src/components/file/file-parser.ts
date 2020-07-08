@@ -9,23 +9,19 @@ interface Files {
 }
 
 export class FileParser {
-    private readonly dirDepth: string;
-    constructor(dirDepth = '../../../') {
-      this.dirDepth = dirDepth;
+    private readonly dirPath: string;
+    private readonly dir: string;
+
+    constructor(dirDepth = '../../../', dir= 'src') {
+      this.dirPath = path.resolve(`${__dirname}`, dirDepth);
+      this.dir = dir;
     }
 
     async retrieveFilenames(): Promise<string[]> {
      const FILE = 0, HEAD = 1, WORKDIR = 2, STAGE = 3;
-     const dir: string = path.resolve(`${__dirname}`, this.dirDepth);
+     const statusFiles = await this.getFilesFromDir(this.dir);
 
-     // Get all files from specific directory
-     const statusFiles = await git.statusMatrix({
-       dir,
-       fs,
-       filter: f => f.startsWith('src')
-     });
-
-     // mapFiles to desired object
+      // mapFiles to desired object
      const files = statusFiles.map(statusFile => ({
         path: statusFile[FILE],
         status: [
@@ -38,11 +34,22 @@ export class FileParser {
        .map(file => file.path)
     }
 
-private filterModifiedFiles(files): Files[] {
-  const { unmodified, stagedDelete, unstagedDelete } = Statuses;
-  return files.filter(file =>
-      !unmodified.includes(file.status) ||
-      !stagedDelete.includes(file.status) ||
-      !unstagedDelete.includes(file.status));
+  private async getFilesFromDir(dir: string) {
+    return git.statusMatrix({
+      dir: this.dirPath,
+      fs,
+      filter: f => f.startsWith(dir)
+    });
   }
+
+  private filterModifiedFiles(files): Files[] {
+  const { unmodified, stagedDelete, unstagedDelete } = Statuses;
+  const oi = files.filter(file =>
+      !unmodified.every(unmodified => this.hasUnmodifiedFiles(unmodified, file.status))
+      && !stagedDelete.every(stagedDelete => this.hasUnmodifiedFiles(stagedDelete, file.status))
+      && !unstagedDelete.every(unstagedDelete => this.hasUnmodifiedFiles(unstagedDelete, file.status)));
+  return oi;
+  }
+
+  private hasUnmodifiedFiles = (currentStatus, fileStatus) => fileStatus.includes(currentStatus);
 }
