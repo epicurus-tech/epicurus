@@ -23,7 +23,7 @@ export const Statuses = {
   modifiedStaged: [Head.identical, WorkDir.diff, Stage.identical],
   modifiedUnstaged: [Head.identical, WorkDir.diff, Stage.diff],
   unstagedDiffWorkDir: [Head.identical, WorkDir.identical, Stage.diffWorkDir],
-  new: [Head.absent, WorkDir.diff, Stage.absent],
+  newFile: [Head.absent, WorkDir.diff, Stage.absent],
   newStaged: [Head.absent, WorkDir.diff, Stage.diff],
   newUnstagedDiffWorkDir: [Head.absent, WorkDir.diff, Stage.diffWorkDir],
 }
