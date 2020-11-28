@@ -31,7 +31,7 @@ some changes or improvements or alternatives.
 
 Some things that will increase the chance your pull request is accept:
 
-* Write tests.
-* Write a [good commit message][commit].
+- Write tests.
+- Write a [good commit message][commit].
 
 [commit]: https://github.com/commitizen/cz-cli

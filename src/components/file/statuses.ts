@@ -6,14 +6,14 @@ export enum Head {
 export enum WorkDir {
   absent,
   identical,
-  diff
+  diff,
 }
 
 export enum Stage {
   absent,
   identical,
   diff,
-  diffWorkDir
+  diffWorkDir,
 }
 
 export const Statuses = {
@@ -26,5 +26,4 @@ export const Statuses = {
   newFile: [Head.absent, WorkDir.diff, Stage.absent],
   newStaged: [Head.absent, WorkDir.diff, Stage.diff],
   newUnstagedDiffWorkDir: [Head.absent, WorkDir.diff, Stage.diffWorkDir],
-}
-
+};

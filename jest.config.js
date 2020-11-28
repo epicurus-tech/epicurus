@@ -3,17 +3,11 @@
 
 module.exports = {
   clearMocks: true,
-  testEnvironment: "node",
-  testPathIgnorePatterns: ["node_modules/"],
-  roots: [
-    "<rootDir>/src",
-    "<rootDir>/example"
-  ],
-  testMatch: [
-    "**/__tests__/**/*.+(ts)",
-    "**/?(*.)+(spec|test).+(ts)"
-  ],
+  testEnvironment: 'node',
+  testPathIgnorePatterns: ['node_modules/'],
+  roots: ['<rootDir>/src', '<rootDir>/example'],
+  testMatch: ['**/__tests__/**/*.+(ts)', '**/?(*.)+(spec|test).+(ts)'],
   transform: {
-    "^.+\\.(ts)$": "ts-jest"
+    '^.+\\.(ts)$': 'ts-jest',
   },
 };

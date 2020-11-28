@@ -7,4 +7,5 @@ steps:
     image: node:14.4.0-alpine
     commands:
       - npm install
+      - prettier --check .
       - npm test
