@@ -1,9 +1,9 @@
 jest.mock('isomorphic-git');
 import git from 'isomorphic-git';
 import { describe, expect, it } from '@jest/globals';
-import { Statuses } from './statuses';
+import { Statuses } from '../statuses';
 
-import { FileParser } from './file-parser';
+import { FileParser } from '../file-parser';
 describe('FileParser', () => {
   describe('#retrieveFilenames', () => {
     describe('when files have been modified since the last commit', () => {

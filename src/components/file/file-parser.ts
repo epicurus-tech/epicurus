@@ -1,10 +1,9 @@
-/* tslint:disable */
 import git from 'isomorphic-git';
 import * as path from 'path';
 import * as fs from 'fs';
 import { Statuses } from './statuses';
 
-interface Files {
+export interface Files {
   path: string;
 }
 
@@ -29,6 +28,7 @@ export class FileParser {
       path: statusFile[FILE],
       status: [statusFile[HEAD], statusFile[WORKDIR], statusFile[STAGE]],
     }));
+
     return this.filterFiles(files);
   }
 
