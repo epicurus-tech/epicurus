@@ -9,8 +9,8 @@ import { FileParser } from '../../file/file-parser';
 
 let templateFile;
 let configFile;
-const templatePath = '/home/jess/Projects/personal/epicurus/src/components/template/test/fixtures/stryker-template.js';
-const configPath = '/home/jess/Projects/personal/epicurus/src/components/template/test/fixtures/stryker-template.js';
+const templatePath = './src/components/template/test/fixtures/stryker.conf.js';
+const configPath = './src/components/template/test/fixtures/stryker-template.js';
 
 describe('Template', () => {
   describe('#buildTemplate', () => {
@@ -107,7 +107,7 @@ describe('Template', () => {
       await fs.writeFile(configPath, configContent, 'utf-8');
     });
     const spy = jest.spyOn(process, 'cwd');
-    spy.mockReturnValue('/home/jess/Projects/personal/epicurus/src/components/template/test/fixtures/');
+    spy.mockReturnValue('./src/components/template/test/fixtures/');
 
     it('creates a config file with correct content', async () => {
       const expectedContent = `module.exports = {

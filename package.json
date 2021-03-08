@@ -24,17 +24,11 @@
     "ts-jest": "^26.1.0",
     "ts-node": "^9.1.1"
   },
-  "lint-staged": {
-    "*.{js,css,md,ts}": [
-      "lint",
-      "format",
-      "test"
-    ]
-  },
   "scripts": {
     "test": "jest",
     "lint": "prettier --check .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postinstall": "husky install"
   },
   "repository": {
     "type": "git",
