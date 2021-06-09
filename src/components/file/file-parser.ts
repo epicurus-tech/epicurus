@@ -7,29 +7,54 @@ export interface Files {
   path: string;
 }
 
+type FormattedFiles = string;
+
 export class FileParser {
   private readonly dirPath: string;
   private readonly dir: string;
+  private readonly format: string;
 
-  constructor(dirDepth = '../../../', dir = 'src') {
+  constructor({ dirDepth = '../../../', dir = 'src', format = ',' } = {}) {
     this.dirPath = path.resolve(`${__dirname}`, dirDepth);
     this.dir = dir;
+    this.format = format;
   }
 
-  async retrieveFilenames(): Promise<Files[]> {
+  async retrieveFilenames(): Promise<FormattedFiles> {
     const FILE = 0,
       HEAD = 1,
       WORKDIR = 2,
       STAGE = 3;
     const statusFiles = await this.getFilesFromDir(this.dir);
 
-    // mapFiles to desired object
-    const files = statusFiles.map((statusFile) => ({
+    const files = this.mapFileStatus({
+      statusFiles,
+      FILE,
+      HEAD,
+      WORKDIR,
+      STAGE,
+    });
+
+    return this.filterFiles(files);
+  }
+
+  private mapFileStatus({
+    statusFiles,
+    FILE,
+    HEAD,
+    WORKDIR,
+    STAGE,
+  }: {
+    statusFiles;
+    FILE: number;
+    HEAD: number;
+    WORKDIR: number;
+    STAGE: number;
+  }) {
+    return statusFiles.map((statusFile) => ({
       path: statusFile[FILE],
       status: [statusFile[HEAD], statusFile[WORKDIR], statusFile[STAGE]],
     }));
-
-    return this.filterFiles(files);
   }
 
   private async getFilesFromDir(dir: string) {
@@ -40,11 +65,11 @@ export class FileParser {
     });
   }
 
-  private filterFiles(files): Files[] {
+  private filterFiles(files): FormattedFiles {
     const unmodifiedFiles = this.filterUnmodifiedFiles(files);
     const modifiedFiles = this.filterModifiedFiles(files);
 
-    return [...unmodifiedFiles, ...modifiedFiles];
+    return [...unmodifiedFiles, ...modifiedFiles].join(this.format);
   }
   private filterUnmodifiedFiles(files): Files[] {
     const { unmodified, stagedDelete, unstagedDelete } = Statuses;
