@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/255d8ed7d08e4459bd9c20b337841527)](https://app.codacy.com/gh/epicurus-tech/epicurus?utm_source=github.com&utm_medium=referral&utm_content=epicurus-tech/epicurus&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://cloud.drone.io/api/badges/jtlimo/epicurus/status.svg)](https://cloud.drone.io/jtlimo/epicurus)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/173fd396d7a64b13b370bad7ac180b39)](https://www.codacy.com/manual/jtlimo/epicurus?utm_source=github.com&utm_medium=referral&utm_content=jtlimo/epicurus&utm_campaign=Badge_Grade)
 [![License](https://camo.githubusercontent.com/64c92e2865462c1dfd107dca47b1aa1c381f9e92/68747470733a2f2f62616467656e2e6e65742f62616467652f6c6963656e73652f4d49542f626c7565)](https://github.com/jtlimo/epicurus/blob/master/LICENSE)
