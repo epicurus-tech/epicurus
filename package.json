@@ -2,10 +2,13 @@
   "name": "epicurus",
   "version": "0.0.1",
   "description": "Generate stryker mutation tests configuration based on diff commits",
-  "main": "index.js",
+  "main": "dist/index.js",
   "directories": {
     "example": "example",
     "src": "src"
+  },
+  "bin": {
+    "epicurus": "src/index.ts"
   },
   "dependencies": {
     "isomorphic-git": "^1.4.0",
@@ -27,6 +30,7 @@
   "scripts": {
     "test": "jest",
     "lint": "prettier --check .",
+    "build": "tsc --build",
     "format": "prettier --write .",
     "postinstall": "husky install"
   },

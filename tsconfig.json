@@ -1,15 +1,21 @@
 {
-  "include": ["src/**/*", "node_modules/@types"],
-  "module": "ES2020",
-  "target": "ES2020",
-  "strict": true,
-  "noImplicitAny": true,
-  "noImplicitThis": true,
-  "strictNullChecks": true,
-  "allowSyntheticDefaultImports": true,
-  "noImplicitReturns": true,
-  "noUnusedLocals": true,
-  "noUnusedParameters": true,
-  "forceConsistentCasingInFileNames": true,
-  "esModuleInterop": true
+  "include": ["src/**/*"],
+  "exclude": ["src/**/test/*"],
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "module": "commonjs",
+    "target": "ES6",
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "types": ["jest", "node"]
+  }
 }
