@@ -84,14 +84,8 @@ export class FileParser {
   }
 
   private filterModifiedFiles(files): Files[] {
-    const {
-      modifiedStaged,
-      modifiedUnstaged,
-      unstagedDiffWorkDir,
-      newFile,
-      newStaged,
-      newUnstagedDiffWorkDir,
-    } = Statuses;
+    const { modifiedStaged, modifiedUnstaged, unstagedDiffWorkDir, newFile, newStaged, newUnstagedDiffWorkDir } =
+      Statuses;
 
     return files
       .filter(

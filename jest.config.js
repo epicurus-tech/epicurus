@@ -5,7 +5,7 @@ module.exports = {
   clearMocks: true,
   testEnvironment: 'node',
   testPathIgnorePatterns: ['node_modules/'],
-  roots: ['<rootDir>/src', '<rootDir>/example'],
+  roots: ['<rootDir>/src'],
   testMatch: ['**/__tests__/**/*.+(ts)', '**/?(*.)+(spec|test).+(ts)'],
   transform: {
     '^.+\\.(ts)$': 'ts-jest',

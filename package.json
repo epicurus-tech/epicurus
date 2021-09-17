@@ -1,24 +1,21 @@
 {
   "name": "epicurus",
   "version": "0.0.1",
-  "description": "Generate stryker mutation tests configuration based on diff commits",
+  "description": "returns modified files based on diff commits",
   "main": "dist/index.js",
   "directories": {
-    "example": "example",
     "src": "src"
   },
   "bin": {
-    "epicurus": "src/index.ts"
+    "epicurus": "dist/index.js"
   },
   "dependencies": {
+    "commander": "^8.0.0",
     "isomorphic-git": "^1.4.0",
+    "path": "^0.12.7",
     "typescript": "^3.9.5"
   },
   "devDependencies": {
-    "@stryker-mutator/core": "^3.2.4",
-    "@stryker-mutator/javascript-mutator": "^3.2.4",
-    "@stryker-mutator/jest-runner": "^3.2.4",
-    "@stryker-mutator/typescript": "^3.2.4",
     "@types/jest": "^25.2.3",
     "husky": "^5.1.3",
     "jest": "^26.0.1",
@@ -30,13 +27,15 @@
   "scripts": {
     "test": "jest",
     "lint": "prettier --check .",
-    "build": "tsc --build",
+    "build": "tsc -p .",
     "format": "prettier --write .",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "local": "npm i -g && epicurus",
+    "start": "npx ts-node src/index.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jtlimo/epicurus.git"
+    "url": "git+https://github.com/epicurus-tech/epicurus.git"
   },
   "keywords": [
     "mutation-tests",
@@ -46,7 +45,7 @@
   "author": "Jessica de Lima Fileto",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jtlimo/epicurus/issues"
+    "url": "https://github.com/epicurus-tech/epicurus/issues"
   },
-  "homepage": "https://github.com/jtlimo/epicurus#readme"
+  "homepage": "https://github.com/epicurus-tech/epicurus#readme"
 }

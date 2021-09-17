@@ -16,6 +16,6 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "outDir": "dist",
-    "types": ["jest", "node"]
+    "types": ["jest", "node", "commander"]
   }
 }
