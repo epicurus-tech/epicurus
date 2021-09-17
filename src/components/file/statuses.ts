@@ -1,19 +1,21 @@
+/* eslint-disable no-unused-vars */
+
 export enum Head {
   absent,
-  identical,
+  identical
 }
 
 export enum WorkDir {
   absent,
   identical,
-  diff,
+  diff
 }
 
 export enum Stage {
   absent,
   identical,
   diff,
-  diffWorkDir,
+  diffWorkDir
 }
 
 export const Statuses = {
@@ -25,5 +27,5 @@ export const Statuses = {
   unstagedDiffWorkDir: [Head.identical, WorkDir.identical, Stage.diffWorkDir],
   newFile: [Head.absent, WorkDir.diff, Stage.absent],
   newStaged: [Head.absent, WorkDir.diff, Stage.diff],
-  newUnstagedDiffWorkDir: [Head.absent, WorkDir.diff, Stage.diffWorkDir],
-};
+  newUnstagedDiffWorkDir: [Head.absent, WorkDir.diff, Stage.diffWorkDir]
+}
