@@ -7,7 +7,7 @@
 
 # Epicurus
 
-Epicurus is a tool that allows to generate stryker mutation test configuration based on diff commits.
+Epicurus is a tool that returns modified files based on diff commits.
 
 ## Prerequisites
 
@@ -27,7 +27,11 @@ npm install -D epicurus
 
 ## Using epicurus
 
----- under construction ----
+You could use epicurus to compose another commands, e.g.
+
+```bash
+npx stryker run -m ($epicurus)
+```
 
 ## Contributing to epicurus
 
@@ -37,8 +41,8 @@ To contribute to epicurus, follow the [contributing steps]:
 
 Alternatively see the Github documentation on [creating a pull request](https://www.notion.so/Getting-Started-00191f447d7f4e1fb0b29dd7022a0936#e4ab5acc6fde4916850215c3985792b9)
 
-You can use github cli to quickly create a pull request.
-See how to installs [github cli](https://github.com/cli/cli).
+You can use GitHub cli to quickly create a pull request.
+See how to install [github cli](https://github.com/cli/cli).
 
 ## Contributors
 
