@@ -1,5 +1,5 @@
 {
-  "name": "epicurus",
+  "name": "@epicurus/epicurus",
   "version": "0.0.1",
   "description": "returns modified files based on diff commits",
   "main": "dist/index.js",
