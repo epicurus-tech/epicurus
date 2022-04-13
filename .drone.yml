@@ -8,7 +8,7 @@ steps:
     commands:
       - npm install
       - npm test
-  - name: publish to npm
-    image: plugins/npm
-    settings:
-      secrets: [npm_username, npm_password, npm_email]
+  # - name: publish to npm
+  #   image: plugins/npm
+  #   settings:
+  #     secrets: [npm_username, npm_password, npm_email]
